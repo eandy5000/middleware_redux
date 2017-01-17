@@ -6,15 +6,22 @@ class UserList extends Component {
     componentWillMount() {
         this.props.getUsers()
     }
+
+    renderList(user) {
+        return (
+            <div key={user.id}>
+        { user.name }
+            <hr />
+            </div>
+        )
+    }
     
     render() {
         console.log(this.props.users)
         return (
             <div>
             UserList
-            { this.props.users.map( user => {
-                return <div key={user.id} >{user.name}</div>
-            }) }
+                { this.props.users.map(this.renderList) }
             </div>
         )
     }
