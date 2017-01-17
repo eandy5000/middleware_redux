@@ -4,21 +4,25 @@ import * as actions from '../actions/index'
 
 class UserList extends Component {
     componentWillMount() {
-        console.log(" getUsers",this.props.getUsers())
         this.props.getUsers()
     }
     
     render() {
-        console.log(this.props.test)
+        console.log(this.props.users)
         return (
-            <div>UserList</div>
+            <div>
+            UserList
+            { this.props.users.map( user => {
+                return <div key={user.id} >{user.name}</div>
+            }) }
+            </div>
         )
     }
 }
 
 function mapStateToProps(state) {
     return {
-        test: state.users
+        users: state.users
     }
 }
 
