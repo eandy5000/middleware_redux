@@ -4,6 +4,7 @@ import * as actions from '../actions/index'
 
 class UserList extends Component {
     componentWillMount() {
+        console.log(" getUsers",this.props.getUsers())
         this.props.getUsers()
     }
     
