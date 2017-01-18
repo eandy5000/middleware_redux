@@ -10,7 +10,7 @@ class UserList extends Component {
     renderList(user) {
         return (
             <div key={user.id}>
-        { user.name }
+                { user.name }
             <hr />
             </div>
         )
@@ -20,7 +20,7 @@ class UserList extends Component {
         console.log(this.props.users)
         return (
             <div>
-            UserList
+            <h3>A List of Users</h3>
                 { this.props.users.map(this.renderList) }
             </div>
         )
